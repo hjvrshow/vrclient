@@ -1,6 +1,6 @@
 <?php
 
-
+error_reporting(E_ALL^E_NOTICE^E_WARNING);
 $getid = $_GET['id'];
 $postid =  $_POST['id'];
 
