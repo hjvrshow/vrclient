@@ -29,7 +29,7 @@ tour.html?id=7002fb055d0fa518
 error_reporting(E_ALL^E_NOTICE^E_WARNING);
 $getid = $_GET['id'];
 $postid =  $_POST['id'];
-$url='http://720ybf.com/partner/serverpro.php?getid='.$getid.'&postid='.$postid;
+$url='http://720ybf.com/partner/serverpro.php?getid='.$getid.'&postid='.$postid.'&key=publickey';
 $html = file_get_contents($url);
 echo $html;
 
@@ -56,6 +56,25 @@ echo $html;
 * [http://720ybf.com/vrclient/tour.html?id=c2ec65dd93d604a5](http://720ybf.com/vrclient/tour.html?id=c2ec65dd93d604a5)
 
 
+## 高级配置
+
+如果后台环境中，已经配置了URL重写，或使用的非PHP环境，只需在客户端入口文件 tour.html 配置两个参数即可。
+
+```xml
+<script>
+    /* 服务器环境配置
+      VR_PreFix ： 全景ID的前缀字符串
+                   如页面URL为 tour.html?id=7002fb055d0fa518 ，可设置 VR_PreFix= 'id=';
+                   如页面URL为 tour/id/7002fb055d0fa518 ，可设置 VR_PreFix= 'id/';
+      VR_SERVER :  与后台服务器交互的服务器页面
+                    默认为 getdata.php
+    */
+
+    var VR_PreFix = 'id=';
+    var VR_SERVER = 'getdata.php';
+</script>
+```
+
 
 ## 商业合作
 
@@ -65,7 +84,7 @@ echo $html;
 幻镜联盟对外的VR全景拍摄制作服务制定的市场价格为：
   - 16K清晰度，单反相机拍摄， 1800元起
   - 12K清晰度，商业全景相机拍摄，1200元起
-  
+
 幻镜联盟合作平台可享受折扣价格。
 
 全景照片由幻镜VR联盟拍摄制作，服务器端由杭州幻镜科技运营，客户端集成在垂直行业网站，App或微信端展示VR全景。

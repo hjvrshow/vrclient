@@ -15,8 +15,19 @@
     <link rel="stylesheet" href="resource/zui-theme.css">
     <link rel="stylesheet" href="resource/redefinekoubei.css">
     <script src="resource/jquery-1.9.1.js"></script>
-    <!--script language="JavaScript" type="text/javascript" src="kb_vrshow.js?t=2"></script-->
-    <script language="JavaScript" type="text/javascript" src="resource/vrshowencode.js?t=1"></script>
+
+    <script>
+    /* 服务器环境配置
+      VR_PreFix ： 全景ID的前缀字符串
+                   如页面URL为 tour.html?id=7002fb055d0fa518 ，可设置 VR_PreFix= 'id=';
+                   如页面URL为 tour/id/7002fb055d0fa518 ，可设置 VR_PreFix= 'id/';
+      VR_SERVER :  与后台服务器交互的服务器页面
+                    默认为 getdata.php
+    */
+
+    var VR_PreFix = 'id=';
+    var VR_SERVER = 'getdata.php';
+    </script>
 
     <style>
         @-ms-viewport { width:device-width; }
@@ -58,7 +69,7 @@
         </div>
 
         <div id="topmsg2" style="position: fixed; bottom:0px;text-align:center;  z-index: 90003; width: 100%;height:30px; color: #fff;font-size: 6px;line-height: 30px;opacity:0.3;">
-          客满云店 ©2018
+          幻镜VR联盟 ©2018
         </div>
         <div id="pano" style="width:100%; height:100%;">
         </div>
@@ -67,4 +78,5 @@
         </div>
     </div>
 </body>
+<script language="JavaScript" type="text/javascript" src="resource/vrshowencode.js"></script>
 </html>
