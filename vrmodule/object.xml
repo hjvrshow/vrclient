@@ -1,7 +1,8 @@
 <krpano version="1.0.8.15">
 
+
 	<events onresize="updateframes()" onviewchange="updateframesscale()" />
-	
+
 	<style name="frame" keep="true" visible="false"
 		align="center" zorder="100"
 		onloaded="updateframesize(get(name));set(plugin[loadingtext].visible,false);"
@@ -24,8 +25,8 @@
 		css="p {color:#FFFFFF; font-family:arial; font-size:16px }"
 		visible="false"
 	/>
-	
-	<layer name="gallerynext" url="/static/images/gallerybtns.png" keep="true" 
+
+	<layer name="gallerynext" url="/static/images/gallerybtns.png" keep="true"
 		align="right" x="0" y="0" zorder="100"
 		crop="100|0|100|100"
 		onovercrop="100|100|100|100"
@@ -35,8 +36,8 @@
 		direction="-1"
 		visible="false"
 	/>
-	
-	<layer name="galleryprev" url="/static/images/gallerybtns.png" keep="true" 
+
+	<layer name="galleryprev" url="/static/images/gallerybtns.png" keep="true"
 		align="left" x="0" y="0" zorder="100"
 		crop="0|0|100|100"
 		onovercrop="0|100|100|100"
@@ -45,8 +46,8 @@
 		onup="set(y,0)"
 		direction="1"
 		visible="false"
-	/>	
-	
+	/>
+
 	<action name="buildframes">
 		for(set(i,0), i LT %2, inc(i),
 			txtadd(fname,frame,get(i));
@@ -60,7 +61,7 @@
 		set(oldmousex,0);
 		showframe(0);
 	</action>
-	
+
 	<action name="updateframesize">
 		if(plugin[%1].imagewidth GT stagewidth,
 			set(plugin[%1].width,100%);
@@ -74,7 +75,7 @@
 			);
 		);
 	</action>
-	
+
 	<action name="obj_clsoe">
 		for(set(i,0), i LT framecount, inc(i),
 			txtadd(fname,frame,get(i));
@@ -93,16 +94,16 @@
 			sub(temp,180,view.fov);
 			div(newscale,temp,70);
 			copy(plugin[get(fname)].scale,newscale);
-		);	
+		);
 	</action>
-	
+
 	<action name="updateframes">
 		for(set(i,0), i LT framecount, inc(i),
 			txtadd(fname,frame,get(i));
 			updateframesize(get(fname));
-		);		
+		);
 	</action>
-	
+
 	<action name="showframe">
 		set(plugin[loadingtext].visible,true);
 		txtadd(fname,frame,get(currentframe));
@@ -119,7 +120,7 @@
 		set(layer[obj_bg].visible,true);
 		<!-- ifnot(%2,set(layer[obj_bg].visible,true);); -->
 
-		
+
 	</action>
 
 	<action name="dorotate">
@@ -140,6 +141,6 @@
 		);
 	</action>
 
-	
-	
+
+
 </krpano>
