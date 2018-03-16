@@ -8,10 +8,13 @@ VR全景展示已应用于携程去哪儿，飞猪，大众点评，支付宝口
 ## 目录
 
 * 服务器端文件
-  * getdata.php
-* 客户端文件
+  * server/getdata.php
+* 客户端入口文件
   * tour.html
-  * 其它...
+* 全景模块文件夹
+  * vrmodule/
+* 静态资源文件夹
+  * static
 
 ## 实现原理
 
@@ -20,7 +23,7 @@ VR全景展示已应用于携程去哪儿，飞猪，大众点评，支付宝口
 tour.html?id=7002fb055d0fa518
 ```
 
-客户端会访问本地唯一的一个服务器文件 getdata.php 从幻镜VR联盟服务器上获取配置信息，在客户端展示全景图片与文字。
+全景模块会访问本地唯一的一个服务器文件 getdata.php 从幻镜VR联盟服务器上获取配置信息，在客户端展示全景图片与热点。
 
 
 ```xml
@@ -58,21 +61,34 @@ echo $html;
 
 ## 高级配置
 
-如果后台环境中，已经配置了URL重写，或使用的非PHP环境，只需在客户端入口文件 tour.html 配置两个参数即可。
+根据服务器环境不同，用户可以配置下面3个全局变量：
+
+  - VR_ID：      全景ID。   默认采用的是读取URL上传入的参数，如： /tour.html?id=7002fb055d0fa518
+                       如用户采用了不同的URL结构，需要自行获取全景ID
+  - VR_SERVER：  服务器页面。 VR模块通过改页面从幻镜联盟服务器读取数据和配置信息。
+                        如用户改变了路径，或修改了名称，需要设置该变量。
+                        该变量设置的是相对路径。
+  - VR_MODULE:   全景模块文件夹路径。 该模块包含多个文件。
+                        如果用户改变了全景模块的路径，或修改了名称，需要设置改变量。
+                        该变量设置的是相对路径。
 
 ```xml
 <script>
-    /* 服务器环境配置
-      VR_PreFix ： 全景ID的前缀字符串
-                   如页面URL为 tour.html?id=7002fb055d0fa518 ，可设置 VR_PreFix= 'id=';
-                   如页面URL为 tour/id/7002fb055d0fa518 ，可设置 VR_PreFix= 'id/';
-      VR_SERVER :  与后台服务器交互的服务器页面
-                    默认为 getdata.php
-    */
+var VR_ID;
 
-    var VR_PreFix = 'id=';
-    var VR_SERVER = 'getdata.php';
+      var href = window.location.href;
+      if(href.lastIndexOf('&')>0){
+        VR_ID = href.substring(href.lastIndexOf('id=') + 3, href.lastIndexOf('&'));
+      }else{
+        VR_ID = href.substring(href.lastIndexOf('id=') + 3);
+      }
+
+var VR_SERVER = 'server/getdata.php';
+var VR_MODULE = 'vrmodule/';
 </script>
+
+<!-- 特别注意： 如果配置了 VR_MODULE 参数，请同时修改下面JS文件的路径。该 tour.js 文件放置在全景模块文件夹下。-->
+<script language="JavaScript" type="text/javascript" src="vrmodule/tour.js"></script>
 ```
 
 

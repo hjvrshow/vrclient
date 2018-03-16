@@ -11,23 +11,39 @@
     <meta content="no-cache" http-equiv="Pragma" />
     <meta content="0" http-equiv="Expires" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-    <link rel="stylesheet" href="resource/zui.min.css">
-    <link rel="stylesheet" href="resource/zui-theme.css">
-    <link rel="stylesheet" href="resource/redefinekoubei.css">
-    <script src="resource/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="static/zui.min.css">
+    <link rel="stylesheet" href="static/zui-theme.css">
+    <link rel="stylesheet" href="static/redefinekoubei.css">
+    <script src="static/jquery-1.9.1.js"></script>
 
+    <!--
+        根据服务器环境不同，用户可以配置下面3个全局变量：
+        VR_ID：      全景ID。   默认采用的是读取URL上传入的参数，如： /tour.html?id=7002fb055d0fa518
+                               如用户采用了不同的URL结构，需要自行获取全景ID
+        VR_SERVER：  服务器页面。 VR模块通过改页面从幻镜联盟服务器读取数据和配置信息。
+                                如用户改变了路径，或修改了名称，需要设置该变量。
+                                该变量设置的是相对路径。
+        VR_MODULE:   全景模块文件夹路径。 该模块包含多个文件。
+                                如果用户改变了全景模块的路径，或修改了名称，需要设置改变量。
+                                该变量设置的是相对路径。
+    -->
     <script>
-    /* 服务器环境配置
-      VR_PreFix ： 全景ID的前缀字符串
-                   如页面URL为 tour.html?id=7002fb055d0fa518 ，可设置 VR_PreFix= 'id=';
-                   如页面URL为 tour/id/7002fb055d0fa518 ，可设置 VR_PreFix= 'id/';
-      VR_SERVER :  与后台服务器交互的服务器页面
-                    默认为 getdata.php
-    */
+    var VR_ID;
 
-    var VR_PreFix = 'id=';
-    var VR_SERVER = 'getdata.php';
+          var href = window.location.href;
+          if(href.lastIndexOf('&')>0){
+            VR_ID = href.substring(href.lastIndexOf('id=') + 3, href.lastIndexOf('&'));
+          }else{
+            VR_ID = href.substring(href.lastIndexOf('id=') + 3);
+          }
+
+
+    var VR_SERVER = 'server/getdata.php';
+    var VR_MODULE = 'vrmodule/';
     </script>
+
+    <!-- 特别注意： 如果配置了 VR_MODULE 参数，请同时修改下面JS文件的路径。该 tour.js 文件放置在全景模块文件夹下。-->
+    <script language="JavaScript" type="text/javascript" src="vrmodule/tour.js"></script>
 
     <style>
         @-ms-viewport { width:device-width; }
@@ -37,7 +53,7 @@
     </style>
 </head>
 <body>
-    <script language="JavaScript" type="text/javascript" src="tour.js"></script>
+
     <div id="fullscreenid" style="position:relative;width:100%; height:100%;">
         <div id="panoBtns" style="display:none">
             <div class="vrshow_container_logo">
@@ -62,7 +78,7 @@
 
             <div class="vrshow_container_3_min">
                 <div class="img_desc_container_min scene-choose-width" style="display:none">
-                    <img src="resource/vr-btn-scene.png" onClick="showthumbs()">
+                    <img src="static/vr-btn-scene.png" onClick="showthumbs()">
                     <div class="img_desc_min">门店内景</div>
                 </div>
             </div>
@@ -78,5 +94,5 @@
         </div>
     </div>
 </body>
-<script language="JavaScript" type="text/javascript" src="resource/vrshowencode.js"></script>
+<script language="JavaScript" type="text/javascript" src="static/vrshowencode.js"></script>
 </html>
