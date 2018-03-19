@@ -213,7 +213,7 @@
 }
 
 .btn_fullscreen {
-    background: url("/static/images/skin1/full-screen.png") no-repeat;
+    background: url("images/skin1/full-screen.png") no-repeat;
     background-size: 40px;
 }
 
@@ -223,7 +223,7 @@
 /*}*/
 
 .btn_fullscreen_off {
-    background: url("/static/images/skin1/full-stop.png") no-repeat;
+    background: url("images/skin1/full-stop.png") no-repeat;
     background-size: 40px;
 }
 
@@ -233,25 +233,25 @@
 /*}*/
 
 .btn_vrmode {
-    background: url("/static/images/skin1/vrmode.png") no-repeat;
+    background: url("images/skin1/vrmode.png") no-repeat;
      background-size: 40px;
 }
 
 .btn_bgmusic {
-    background: url("/static/images/skin1/bgmusic-open.png") no-repeat;
+    background: url("images/skin1/bgmusic-open.png") no-repeat;
     background-size: 40px;
 }
 
 .btn_bgmusic_off {
-    background: url("/static/images/skin1/bgmusic-close.png") no-repeat;
+    background: url("images/skin1/bgmusic-close.png") no-repeat;
     background-size: 40px;
 }
 .btn_music {
-    background: url("/static/images/skin1/music-open.png") no-repeat;
+    background: url("images/skin1/music-open.png") no-repeat;
     background-size: 40px;
 }
 .btn_music_off {
-    background: url("/static/images/skin1/music-close.png") no-repeat;
+    background: url("images/skin1/music-close.png") no-repeat;
     background-size: 40px;
 }
 /*.btn_music {
@@ -277,7 +277,7 @@
 /*}*/
 
 .btn_gyro {
-    background: url("/static/images/skin1/gyro-open.png") no-repeat;
+    background: url("images/skin1/gyro-open.png") no-repeat;
     background-size: 40px;
 }
 
@@ -287,7 +287,7 @@
 /*}*/
 
 .btn_gyro_off {
-    background: url("/static/images/skin1/gyro-close.png") no-repeat;
+    background: url("images/skin1/gyro-close.png") no-repeat;
     background-size: 40px;
 }
 
@@ -297,70 +297,70 @@
 /*}*/
 
 .btn_comment {
-    background: url("/static/images/kr/icon.png") no-repeat -160px 0px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -160px 0px / 400px 160px;
 }
 
 .btn_comment:focus,
 .btn_comment:hover {
-    background: url("/static/images/kr/icon.png") no-repeat -200px 0px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -200px 0px / 400px 160px;
 }
 
 .btn_trace {
-    background: url("/static/images/kr/icon.png") no-repeat -240px -40px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -240px -40px / 400px 160px;
 }
 
 .btn_trace:focus,
 .btn_trace:hover {
-    background: url("/static/images/kr/icon.png") no-repeat -280px -40px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -280px -40px / 400px 160px;
 }
 
 .btn_details {
-    background: url("/static/images/kr/icon.png") no-repeat -160px -40px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -160px -40px / 400px 160px;
 }
 
 .btn_details:focus,
 .btn_details:hover {
-    background: url("/static/images/kr/icon.png") no-repeat -200px -40px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -200px -40px / 400px 160px;
 }
 
 .btn_share {
-    background: url("/static/images/kr/icon.png") no-repeat 0px -40px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat 0px -40px / 400px 160px;
 }
 
 .btn_share:focus,
 .btn_share:hover {
-    background: url("/static/images/kr/icon.png") no-repeat -40px -40px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -40px -40px / 400px 160px;
 }
 
 .btn_like {
-    background: url("/static/images/kr/icon.png") no-repeat -80px -40px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -80px -40px / 400px 160px;
 }
 
 .btn_like_onclick {
-    background: url("/static/images/kr/icon.png") no-repeat -80px -120px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -80px -120px / 400px 160px;
 }
 
 .btn_like:focus,
 .btn_like:hover {
-    background: url("/static/images/kr/icon.png") no-repeat -120px -40px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -120px -40px / 400px 160px;
 }
 
 .btn_choose_sence {
-    background: url("/static/images/kr/icon.png") no-repeat -240px 0px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -240px 0px / 400px 160px;
 }
 
 .btn_choose_sence:focus,
 .btn_choose_sence:hover {
-    background: url("/static/images/kr/icon.png") no-repeat -280px 0px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -280px 0px / 400px 160px;
 }
 
 .btn_url {
-    background: url("/static/images/kr/icon.png") no-repeat 0px 0px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat 0px 0px / 400px 160px;
 }
 
 .btn_url:focus,
 .btn_url:hover {
-    background: url("/static/images/kr/icon.png") no-repeat -40px 0px / 400px 160px;
+    background: url("images/kr/icon.png") no-repeat -40px 0px / 400px 160px;
 }
 
 #top {
