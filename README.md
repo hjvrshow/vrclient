@@ -1,16 +1,20 @@
+# 最近更新
+2018.4.21   加入VR环物功能；改进VR全景在手机端的缩略图显示。
+
 # VR全景客户端
 
 VR全景展示已应用于携程去哪儿，飞猪，大众点评，支付宝口碑，汽车之家等大型平台网址。但VR全景涉及拍摄，制作，展示等多个方面，中小平台和小程序开发商添加VR全景功能，开展VR业务负担较重。
 
 幻镜VR联盟为推广VR全景应用，推出了VR全景客户端与后台制作系统分离的模式：各平台网站可直接使用本客户端代码在网站，App和小程序中实现VR全景展示功能；商家客户VR需求可发给幻镜联盟全国各地代理商拍摄制作。
-使用本VR全景客户端，平台网站可零花费迅速开展VR全景业务。
+使用本VR全景客户端，平台网站可零花费迅速开展VR全景业务。VR环物为附带功能，将另文介绍。
 
 ## 目录
 
 * 服务器端文件
   * server/getdata.php
 * 客户端入口文件
-  * tour.html
+  * tour.html     VR全景入口文件
+  * round.html    VR环物入口文件
 * 全景模块文件夹
   * vrmodule/
 * 静态资源文件夹
@@ -32,7 +36,8 @@ tour.html?id=7002fb055d0fa518
 error_reporting(E_ALL^E_NOTICE^E_WARNING);
 $getid = $_GET['id'];
 $postid =  $_POST['id'];
-$url='http://720ybf.com/partner/serverpro.php?getid='.$getid.'&postid='.$postid.'&key=publickey';
+$key = $_GET['key'];
+$url='http://720ybf.com/partner/serverpro.php?getid='.$getid.'&postid='.$postid.'&key='.$key;
 $html = file_get_contents($url);
 echo $html;
 
@@ -97,11 +102,9 @@ var VR_MODULE = 'vrmodule/';
 幻镜VR联盟是由杭州幻镜科技有限公司运营的全国720全景拍摄服务网络，已经在全国80＋个城市开通服务。
 联盟制定了统一的价格和质量标准，为餐饮，美容，健身，教育等垂直行业平台提供标准化全景拍摄与制作服务。
 
-幻镜联盟对外的VR全景拍摄制作服务制定的市场价格为：
-  - 16K清晰度，单反相机拍摄， 1800元起
-  - 12K清晰度，商业全景相机拍摄，1200元起
-
-幻镜联盟合作平台可享受折扣价格。
+幻镜联盟为各平台网站提供统一价格的VR全景拍摄服务:
+  - 16K清晰度，单反相机拍摄， 900元每套起
+  - 12K清晰度，商业全景相机拍摄，500元每套起
 
 全景照片由幻镜VR联盟拍摄制作，服务器端由杭州幻镜科技运营，客户端集成在垂直行业网站，App或微信端展示VR全景。
 

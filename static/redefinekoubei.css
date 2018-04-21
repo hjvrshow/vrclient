@@ -69,7 +69,7 @@
 .vrshow_container_3, .vrshow_container_3_min {
     position: absolute;
     left: 10px;
-    bottom: 10px;
+    bottom: 2px;
     /*height:62px;*/
     z-index: 800;
 }
@@ -185,7 +185,7 @@
 
 .vrshow_container_1_min {
     position: absolute;
-    right: 10px;
+    right: 6px;
     top: 250px;
     width: 40px;
     z-index: 800;
@@ -204,8 +204,8 @@
 .vrshow_container_3_min span,
 .vrshow_container_3_min img {
     display: block;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     /*margin-right: 5px;*/
     margin: 0 auto;
     cursor: pointer;
@@ -214,7 +214,7 @@
 
 .btn_fullscreen {
     background: url("images/skin1/full-screen.png") no-repeat;
-    background-size: 40px;
+    background-size: 30px;
 }
 
 /*.btn_fullscreen:focus,*/
@@ -224,7 +224,7 @@
 
 .btn_fullscreen_off {
     background: url("images/skin1/full-stop.png") no-repeat;
-    background-size: 40px;
+    background-size: 30px;
 }
 
 /*.btn_fullscreen_off:focus,*/
@@ -234,25 +234,25 @@
 
 .btn_vrmode {
     background: url("images/skin1/vrmode.png") no-repeat;
-     background-size: 40px;
+     background-size: 30px;
 }
 
 .btn_bgmusic {
     background: url("images/skin1/bgmusic-open.png") no-repeat;
-    background-size: 40px;
+    background-size: 30px;
 }
 
 .btn_bgmusic_off {
     background: url("images/skin1/bgmusic-close.png") no-repeat;
-    background-size: 40px;
+    background-size: 30px;
 }
 .btn_music {
     background: url("images/skin1/music-open.png") no-repeat;
-    background-size: 40px;
+    background-size: 30px;
 }
 .btn_music_off {
     background: url("images/skin1/music-close.png") no-repeat;
-    background-size: 40px;
+    background-size: 30px;
 }
 /*.btn_music {
     background: url("/static/images/kr/music-open.png") no-repeat;
@@ -557,12 +557,12 @@
     width: 100%;
     text-overflow: clip;
     overflow: hidden;
-    height: 20px;
-    line-height: 20px;
+    height: 10px;
+    line-height: 10px;
     text-align: center;
-    font-size: 10px;
+    font-size: 8px;
     color: #fff;
-    text-shadow: 3px 3px 3px #000;
+    text-shadow: 2px 2px 2px #000;
 }
 
 .tab-content {
