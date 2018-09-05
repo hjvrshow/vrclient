@@ -31,12 +31,10 @@ http://127.0.0.1/vrclient/basic.html?id=c2ec65dd93d604a5
 ## 在线演示
 
 
-```xml
 * [http://720ybf.com/vrclient/basic.html?id=7002fb055d0fa518](http://720ybf.com/vrclient/basic.html?id=7002fb055d0fa518)
 * [http://720ybf.com/vrclient/basic.html?id=1248a9e8f8994a9b](http://720ybf.com/vrclient/basic.html?id=1248a9e8f8994a9b)
 * [http://720ybf.com/vrclient/basic.html?id=7e1d1999913da196](http://720ybf.com/vrclient/basic.html?id=7e1d1999913da196)
 * [http://720ybf.com/vrclient/basic.html?id=c2ec65dd93d604a5](http://720ybf.com/vrclient/basic.html?id=c2ec65dd93d604a5)
-```
 
 
 
