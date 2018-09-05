@@ -13,33 +13,21 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" href="static/zui.min.css">
     <link rel="stylesheet" href="static/zui-theme.css">
-    <link rel="stylesheet" href="static/redefinekoubei.css?t=1">
+    <link rel="stylesheet" href="static/redefinekoubei.css">
     <script src="static/jquery-1.9.1.js"></script>
+    <script language="JavaScript" type="text/javascript" src="static/vrshowencode.js"></script>
 
 
     <!--
         根据服务器环境不同，用户可以配置下面3个全局变量：
         VR_ID：      全景ID。   默认采用的是读取URL上传入的参数，如： /tour.html?id=7002fb055d0fa518
                                如用户采用了不同的URL结构，需要自行获取全景ID
-        VR_SERVER：  服务器页面。 VR模块通过改页面从幻镜联盟服务器读取数据和配置信息。
-                                如用户改变了路径，或修改了名称，需要设置该变量。
-                                该变量设置的是相对路径。
         VR_MODULE:   全景模块文件夹路径。 该模块包含多个文件。
                                 如果用户改变了全景模块的路径，或修改了名称，需要设置改变量。
                                 该变量设置的是相对路径。
     -->
     <script>
-    var VR_ID;
-
-          var href = window.location.href;
-          if(href.lastIndexOf('&')>0){
-            VR_ID = href.substring(href.lastIndexOf('id=') + 3, href.lastIndexOf('&'));
-          }else{
-            VR_ID = href.substring(href.lastIndexOf('id=') + 3);
-          }
-
-
-    var VR_SERVER = 'server/getdata.php';
+    var VR_ID=getQueryString('id');
     var VR_MODULE = 'vrmodule/';
     </script>
 
@@ -95,5 +83,5 @@
         </div>
     </div>
 </body>
-<script language="JavaScript" type="text/javascript" src="static/vrshowencode.js"></script>
+
 </html>

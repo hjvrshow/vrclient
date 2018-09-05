@@ -21,7 +21,7 @@
 
 
     <include url="%SWFPATH%/plugins/tooltip.xml"/>
-    <settings name="auto_thumbs" thumb_size="90" thumb_background_size="92" thumb_spacing="20" left="0" right="0"
+    <settings name="auto_thumbs" thumb_size="90" thumb_background_size="92" thumb_spacing="18" left="0" right="0"
               bottom="5" albums_right="0"/>
     <events name="auto_thumbs" keep="true" onresize="resize_auto_thumbs()" onnewscene="update_active_thumb();"
             onxmlcomplete="ifnot(thumbs_intitialized, create_auto_thumbs(); set(thumbs_intitialized, true););"

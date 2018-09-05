@@ -7,7 +7,7 @@
                    tooltips_hotspots="false" tooltips_mapspots="false" deeplinking="false" loadscene_flags="MERGE"
                    loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
                    loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
-                   loadscene_blend_next="SLIDEBLEND(0.5, 0, 0.75, linear)" loadingtext="载入中..." layout_width="100%"
+                   loadscene_blend_next="SLIDEBLEND(0.5, 0, 0.75, linear)" loadingtext="" layout_width="100%"
                    layout_maxwidth="100%" controlbar_width="100%" controlbar_height="0" controlbar_offset="0"
                    controlbar_offset_closed="-40" controlbar_overlap.no-fractionalscaling="10"
                    controlbar_overlap.fractionalscaling="0" design_skin_images="vtourskin.png" design_bgcolor="0x000000"
@@ -23,9 +23,17 @@
     <include url="%SWFPATH%/plugins/tooltip.xml"/>
     <settings name="auto_thumbs" thumb_size="90" thumb_background_size="92" thumb_spacing="20" left="0" right="0"
               bottom="5" albums_right="0"/>
-    <events name="auto_thumbs" keep="true" onresize="resize_auto_thumbs()" onnewscene="update_active_thumb();"
+
+    <!--events name="auto_thumbs" keep="true" onresize="resize_auto_thumbs()" onnewscene="update_active_thumb();"
             onxmlcomplete="ifnot(thumbs_intitialized, create_auto_thumbs(); set(thumbs_intitialized, true););"
-            onmousedown="hide_container(get(layer[albums].current_container)); fadein_children(albums_scrollarea); set(layer[new_thumbs].visible, false); set(layer[albums].current_container, null);"/>
+            onmousedown="hide_container(get(layer[albums].current_container)); fadein_children(albums_scrollarea); set(layer[new_thumbs].visible, false); set(layer[albums].current_container, null);"/-->
+<!-- jscall(calc('console.log("krpano version: ' + version + '")')); -->
+    <events  name="auto_thumbs2" keep="true"  onclick="MovePosition()" />
+
+    <action name="MovePosition">
+      js(  xmlbk_Select( get(mouse.x), get(mouse.y) )       );
+    </action>
+
 
     <layer name="thumbs_background" scalechildren="true" scale="1" type="container" align="leftbottom" x="0" y="-102"
            width="100%" height="102" maskchildren="false" bgcolor="0x000000" bgalpha="0.5" keep="true"
@@ -1098,6 +1106,62 @@
     <action name="hotspot_exitVR">for(set(i,0), i LT hotspot.count, inc(i), copy(lhotspot, hotspot[get(i)]);
         if(lhotspot.hsvrfalse, set(lhotspot.visible,true); ); if(lhotspot.hsvrtrue, set(lhotspot.visible,false); ); );
     </action>
+
+
+
+
+    <action name="showSeatsUpdate">
+      <!--krpano.call('showSeats("'+seatID+'","'+ seatName +'",'+seatStatus+','+seatImgTaken+','+seatImgOpen+','+seatPosAth+','+seatPosAtv+','+seatMeta+')');-->
+      set(seat_id,%1);
+      set(hotspot[get(seat_id)].url,%2);
+      set(seat_size,%3);
+      set(hotspot[get(seat_id)].width,'prop'); set(hotspot[get(seat_id)].height,%3);
+    </action>
+
+    <action name="showSeatsOld2">
+      <!--krpano.call('showSeats("'+seatID+'","'+ seatName +'",'+seatStatus+','+seatImgTaken+','+seatImgOpen+','+seatPosAth+','+seatPosAtv+','+seatMeta+')');-->
+      set(seat_id,%1);
+      set(seat_rotate,%2);
+      set(seat_size,%3);
+      set(seat_ath,%5);
+      set(seat_atv,%6);
+      set(img_open,%7);
+      addhotspot(get(seat_id)); set(hotspot[get(seat_id)].url,%7);set(hotspot[get(seat_id)].hotspotlink,%1);
+      set(hotspot[get(seat_id)].distorted,true);
+      set(hotspot[get(seat_id)].rx,get(seat_rotate));
+      set(hotspot[get(seat_id)].ath,%5); set(hotspot[get(seat_id)].atv,%6);
+      set(hotspot[get(seat_id)].width,'prop'); set(hotspot[get(seat_id)].height,%3);
+      set(hotspot[get(seat_id)].enabled,false);
+
+      <!--
+      set(hotspot[get(seat_id)].onclick,'js(xmlbk_Select (  get(hotspot[get(seat_id)].hotspotlink  ) ))');
+
+      addhotspot(get(schp_name)); set(hotspot[get(schp_name)].url,%5);
+      set(hotspot[get(schp_name)].ath,%6); set(hotspot[get(schp_name)].atv,%7);
+      set(hotspot[get(schp_name)].hotspottitle,%2); set(hotspot[get(schp_name)].hotspotlink,%4);
+      set(hotspot[get(schp_name)].width,'prop');
+      set(hotspot[get(schp_name)].height,'20');
+      if(%3 == 0, set(hotspot[get(schp_name)].onclick,set(hotspot[get(schp_name)].url,%4);); );
+      set(hotspot[get(schp_name)].onclick,set(hotspot[get(schp_name)].url,%4););
+      set(hotspot[get(schp_name)].onclick,'js(console.log(get(hotspot[get(schp_name)].hotspotlink));');
+      set(hotspot[get(schp_name)].onclick,'js(console.log(get(hotspot[get(schp_name)].hotspotlink), get(schp_name)));');
+        js( xmlbk_Select (  get(img_taken)) ) );
+    -->
+
+    </action>
+    <action name="showSeats">
+      set(schp_name,%2);
+       addhotspot(get(schp_name)); set(hotspot[get(schp_name)].url,%1);
+        set(hotspot[get(schp_name)].ath,%4); set(hotspot[get(schp_name)].atv,%5);
+        set(hotspot[get(schp_name)].hotspottitle,%3); set(hotspot[get(schp_name)].hotspotlink,%9);
+        set(hotspot[get(schp_name)].width,'prop'); set(hotspot[get(schp_name)].height,'50');
+        set(hotspot[get(schp_name)].visible,%8);
+        set(hotspot[get(schp_name)].onclick,'js(console.log(get(hotspot[get(name)].hotspotlink), "_blank"));');
+        if(%6 == '1', txtadd(hotspot[get(schp_name)].onloaded,"do_crop_animation(128,128, 60);"); ); if(%10 == true,
+        txtadd(hotspot[get(schp_name)].onloaded,"add_all_the_time_tooltip(hotspot[get(name)].hotspottitle);"); );
+
+    </action>
+
     <action name="addSceneChangeHotSpot">
        set(schp_name,%2);
        addhotspot(get(schp_name));
