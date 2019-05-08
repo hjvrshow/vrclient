@@ -21,7 +21,7 @@ VR全景作为一种吸引眼球的广告展示工具，已应用于携程去哪
 下载后放置于服务器任意目录下，传入全景ID可直接运行。例如下载后文件名为vrclient, 放置在根目录下，则访问地址为：
 
 ```xml
-http://127.0.0.1/vrclient/basic.html?id=c2ec65dd93d604a5
+http://127.0.0.1/vrclient/basic.html?id=81165e8f284cee1f
 ```
 
 全景模块会根据全景ID从幻镜VR联盟服务器上获取配置信息，在客户端展示全景图片与热点。
@@ -31,10 +31,10 @@ http://127.0.0.1/vrclient/basic.html?id=c2ec65dd93d604a5
 ## 在线演示
 
 
-* [http://720ybf.com/vrclient/basic.html?id=7002fb055d0fa518](http://720ybf.com/vrclient/basic.html?id=7002fb055d0fa518)
-* [http://720ybf.com/vrclient/basic.html?id=1248a9e8f8994a9b](http://720ybf.com/vrclient/basic.html?id=1248a9e8f8994a9b)
-* [http://720ybf.com/vrclient/basic.html?id=7e1d1999913da196](http://720ybf.com/vrclient/basic.html?id=7e1d1999913da196)
-* [http://720ybf.com/vrclient/basic.html?id=c2ec65dd93d604a5](http://720ybf.com/vrclient/basic.html?id=c2ec65dd93d604a5)
+* [http://720ybf.com/vrclient/basic.html?id=eabd7816284a7f22](http://720ybf.com/vrclient/basic.html?id=eabd7816284a7f22)
+* [http://720ybf.com/vrclient/basic.html?id=6c42290e3336cb13](http://720ybf.com/vrclient/basic.html?id=6c42290e3336cb13)
+* [http://720ybf.com/vrclient/basic.html?id=7579e915faaf668e](http://720ybf.com/vrclient/basic.html?id=7579e915faaf668e)
+* [http://720ybf.com/vrclient/basic.html?id=3f8a874d91559260](http://720ybf.com/vrclient/basic.html?id=3f8a874d91559260)
 
 
 
